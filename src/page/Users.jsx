@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
 import UserCard from "../components/UserCard";
+import { Link } from "react-router-dom";
 
 const Users = () => {
     const [users,setUsers]=useState([]);
@@ -17,7 +18,7 @@ const Users = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
         {
-            users.map(user=><UserCard user={user} key={user.id}/>)
+            users.map(user=><Link key={user.id} to={`user/${user.id}`}><UserCard user={user}/></Link>)
         }
     </div>
   )

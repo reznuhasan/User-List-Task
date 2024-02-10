@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Root from "./layout/Root"
 import Users from "./page/Users"
+import UserProfile from "./components/UserProfile"
 
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
         {
           path:"/",
           element:<Users/>
+        },
+        {
+          path:"user/:id",
+          element:<UserProfile/>
         }
       ]
     }
