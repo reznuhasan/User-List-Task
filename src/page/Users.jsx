@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
 import UserCard from "../components/UserCard";
+import Shimmer from "../components/Shimmer";
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -65,7 +66,11 @@ const Users = () => {
         }
     }
     // **************sorted part finish **************
-    if (users.length === 0) return <h1>Loding..</h1>
+    if (users.length === 0) return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
+            {Array.from({length:30}).map((_, index) =><Shimmer key={index}/> )}
+        </div>
+    )
     return (
         <div className="flex flex-col justify-center items-center">
             <div>
