@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const UserCard = ({ user }) => {
     const { image, firstName, lastName, email } = user
@@ -9,7 +10,7 @@ const UserCard = ({ user }) => {
                 <img src={image} alt="" className="w-28 p-2" />
             </div>
             <div className="pl-4 mt-2">
-                <h3 className="text-3xl">First Name: {firstName}</h3>
+            <Link className="hover:underline" to={`user/${user.id}`}> <h3 className="text-3xl">First Name: {firstName}</h3></Link>
                 <h3 className="font-medium">Last Name: {lastName}</h3>
                 <h3 className="font-medium">Email: {email}</h3>
                 <h3 className="font-medium">Address: {address},{city}</h3>
